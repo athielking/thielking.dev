@@ -24,4 +24,4 @@ jobs:
     - name: Upload to S3
       run: aws s3 sync . s3://thielking.dev/ --exclude ./terraform --exclude .gitignore
     - name: Invalidate Cloudfront
-      run: aws cloudfront create-invalidation --distribution-id E3559DNRZYRSBA -paths "/*"
+      run: aws cloudfront create-invalidation --distribution-id E3559DNRZYRSBA --paths "/*"
