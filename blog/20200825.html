@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Thielking.dev</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono" />
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+  </head>
+  <header>
+    <h1>Installing Redis from source on WSL</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="links.html">Links</a>
+    </nav>
+  </header>
+  <body>
+    <p>
+        I wanted to start playing around with Redis and decided to try and get it installed locally on my machine. I have an Azure account but even the lowest tier of their Redis offering was more than I wanted to pay, estimated at about $16/month.
+    </p>
+
+    <p>I already had an installation of Windows Subsystem for Linux installed and I am running Ubuntu 18.04 Bionic distribution.  This first thing I did was navigate to 
+        <a href="https://redis.io/topics/quickstart">https://redis.io/topics/quickstart</a> to see what their instructions said. 
+       
+        <pre>
+            $ wget http://download.redis.io/redis-stable.tar.gz
+            $ tar xvzf redis-stable.tar.gz
+            $ cd /redis-stable/
+            $ make
+        </pre>
+
+        I tried running these steps verbatim and ran into a few issues
+    </p>
+
+    
+
+    <p>
+        this first failed because <b>make</b> was not installed. So we do the following: 
+        
+        <pre>
+            $ sudo apt update
+            $ sudo apt install make
+        </pre>
+            
+        Once apt finished installing everything we try running the <b>make</b> command again, and we now run into this error: 
+        
+        <pre>make[3]: cc: Command not found</pre>
+        
+        So we need to install more debian packages:
+        <pre>sudo apt install build-essential</pre>
+        which will install the required compliers for building the source.
+    </p>
+
+    <p>
+        Running the <b>make</b> command again we hit another snag: 
+        <pre>
+            In file included from adlist.c:34:0:
+            zmalloc.h:50:10: fatal error: jemalloc/jemalloc.h: No such file or directory
+        </pre>
+
+        So the default configuration on linux is to use jemalloc for memory allocation.  Thanks to this <a href="https://stackoverflow.com/questions/47088171/error-jemalloc-jemalloc-h-no-such-file-or-directory-when-making-redis">Stack Overflow</a> post, you can change the memory allocator which redis uses by supplying an argument to make.
+        <b>make MALLOC=libc</b>.  This compilation worked for me, however I wanted to see what else I needed to do to get the standard configuration to work.
+    </p>
+
+    <p>
+        I learned from this <a href="https://sharadchhetri.com/jemallocjemalloc-h-no-such-file-or-directory-redis/">blog post</a> that there are dependencies which need to be compiled first before redis can be compiled. These can be built by running the following commands.
+        <pre>
+            $ cd deps
+            $ make hiredis lua jemalloc linenoise
+        </pre>
+
+        Once those dependencies finish compiling, you can go back to the main /redis-stable folder and run the <b>make</b> command again
+
+        <pre>
+            $ cd ..
+            $ make
+        </pre>
+    </p>
+    
+    <p>This should finally all compile successfully, and you'll be prompted to run a <pre>make test</pre>. In doing that I found there was still one thing missing from my system. 
+        <pre>
+            You need tcl 8.5 or newer in order to run the Redis test
+        </pre>
+        was the error message that I got.  So one more package install to get tcl:
+        <pre>
+            $ sudo apt-get install tcl
+        </pre>
+        then re-running the <b>make test</b> command, shows that the test passed.
+    </p>
+
+    <p>
+        In summary, the order that all of this should have been done in would be something as follows
+
+        <pre>
+            $ sudo apt update
+            $ sudo apt install make
+            $ sudo apt install build-essential
+            $ sudo apt-get install tcl
+            $ wget http://download.redis.io/redis-stable.tar.gz
+            $ tar xvzf redis-stable.tar.gz
+            $ cd /redis-stable/
+            $ cd /deps
+            $ make hiredis lua jemalloc linenoise
+            $ cd ..
+            $ make
+        </pre>
+    </p>
+  </body>
+</html>
