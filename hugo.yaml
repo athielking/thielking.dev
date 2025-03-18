@@ -1,0 +1,48 @@
+baseURL: https://thielking.dev/
+languageCode: en-us
+title: Thielking Dev
+theme: ["PaperMod"]
+
+menus:
+  main:
+  - name: Home
+    pageRef: /
+    weight: 10
+  - name: About
+    pageRef: /about
+    weight: 20
+  - name: Pluralsight
+    pageRef: /pluralsight
+    weight: 30
+  - name: Projects
+    pageRef: /projects
+    weight: 40
+  - name: Blog
+    pageRef: /blog
+    weight: 50
+
+params:
+  profileMode:
+    enabled: true
+    title: "Thielking Dev"
+    subtitle: "Andrew Thielking - Developer - Author"
+    imageUrl: "/Thielking_Transparent-Background.png"
+    imageTitle: "8Bit Avatar"
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: Pluralsight
+        url: "/pluralsight"
+      - name: Projects
+        url: "/projects"
+      - name: Blog
+        url: "/blog"
+  socialIcons: 
+    - name: "GitHub"
+      url: "https://github.com/athielking"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/athielking/"
+    - name: "Other"
+      url: "https://app.pluralsight.com/profile/author/andrew-thielking"
+    - name: "Email"
+      url: "mailto:contact@thielking.dev"

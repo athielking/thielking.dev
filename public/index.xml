@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Thielking Dev</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Thielking Dev</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Mar 2025 06:12:28 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pluralsight</title>
+      <link>http://localhost:1313/pluralsight/</link>
+      <pubDate>Tue, 18 Mar 2025 06:12:28 -0400</pubDate>
+      <guid>http://localhost:1313/pluralsight/</guid>
+      <description>&lt;h2 id=&#34;video-courses&#34;&gt;Video Courses&lt;/h2&gt;
+&lt;h3 id=&#34;setting-up-a-cicd-pipeline&#34;&gt;&lt;a href=&#34;https://app.pluralsight.com/library/courses/devops-continuous-integration-delivery-settingup-cicd-pipeline/description&#34;&gt;Setting up a CI/CD Pipeline&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A well-structured CI/CD pipeline is essential for automating software development and deployment.  This course will explore different options for hosting and building your CI/CD process.  We start from setting up a basic git repository and adding commits into it.  We then build on that by setting up an end-to-end build process using GitHub Actions.  We then expand into other CI/CD Platform providers: Azure DevOps and GitLab, and compare and contrast how the same build process works in each platform.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Tue, 18 Mar 2025 05:21:06 -0400</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h3 id=&#34;who-i-am&#34;&gt;Who I am&lt;/h3&gt;
+&lt;p&gt;My name is Andrew Thielking.  I&amp;rsquo;m a software developer currently working at a FinOps startup called ProsperOps.  We build solutions for automating discount management across all 3 major cloud providers.  If you want to save money in the cloud check us out &lt;a href=&#34;https://prosperops.com&#34;&gt;ProsperOps&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;what-i-do&#34;&gt;What I do&lt;/h3&gt;
+&lt;p&gt;I write software professionally and I build projects on the side.  I also write instructional video courses and hands on labs for &lt;a href=&#34;https://pluralsight.com&#34;&gt;Pluralsight&lt;/a&gt;.  If you&amp;rsquo;re interested in checking out what I&amp;rsquo;ve created check out the &lt;a href=&#34;http://localhost:1313/pluralsight&#34;&gt;Pluralsight&lt;/a&gt; page where I keep a list of all my courses.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
