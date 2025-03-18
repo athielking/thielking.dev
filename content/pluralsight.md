@@ -1,8 +1,8 @@
-+++
-title = 'Pluralsight'
-date = 2025-03-18T06:12:28-04:00
-draft = true
-+++
+---
+menus: main
+title: Pluralsight
+date: 2025-03-18T05:21:06-04:00
+---
 
 ## Video Courses
 

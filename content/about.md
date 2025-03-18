@@ -1,7 +1,8 @@
-+++
-title = 'About'
-date = 2025-03-18T05:21:06-04:00
-+++
+---
+menus: main
+title: About
+date: 2025-03-18T05:21:06-04:00
+---
 
 ### Who I am
 
