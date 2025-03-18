@@ -3,6 +3,10 @@ languageCode: en-us
 title: Thielking Dev
 theme: ["PaperMod"]
 
+caches:
+  images:
+    dir: :cacheDir/images
+
 menus:
   main:
   - name: Home
