@@ -4,8 +4,6 @@ title: Projects
 date: 2025-11-20T05:21:06-04:00
 ---
 
-## Projects
-
 Here are some projects I've worked on which have helped me learn various different skills outside of my normal day-to-day job.
 
 ### MuniCheck
