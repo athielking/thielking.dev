@@ -6,7 +6,7 @@ date: 2025-03-18T05:21:06-04:00
 
 ### Who I am
 
-My name is Andrew Thielking.  I'm a software developer currently working at a FinOps startup called ProsperOps.  We build solutions for automating discount management across all 3 major cloud providers.  If you want to save money in the cloud check us out [ProsperOps](https://prosperops.com)
+My name is Andrew Thielking.  I'm a software developer currently working at a FinOps startup called ProsperOps.  We build solutions for automating discount management across all 3 major cloud providers.  If you want to save money in the cloud check us ou: [ProsperOps](https://prosperops.com)
 
 ### What I do
 
